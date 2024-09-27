@@ -84,6 +84,8 @@ p {
 }
 
 .categorias {
+    display: block;
+    text-decoration: none;
     background-color: #e3f2fd;
     padding: 20px;
     border-radius: 8px;
