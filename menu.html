@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Preguntin</title>
+</head>
+<body>
+    <div class="background-image">
+        <div class="container text-center my-5">
+            <h1 class="mb-4">¡Selecciona tu Categoría!</h1>
+            <p><strong>Elige un tema que te apasione y sumérgete en el conocimiento.</strong></p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="categorias bg-light p-4 rounded shadow">
+                        <h3>Categoría 1</h3>
+                        <p>Descripción breve de la categoría 1.</p>
+                        <button class="btn" onclick="selectCategory('categoria1.html')">Seleccionar</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="categorias bg-light p-4 rounded shadow">
+                        <h3>Categoría 2</h3>
+                        <p>Descripción breve de la categoría 2.</p>
+                        <button class="btn" onclick="selectCategory('categoria2.html')">Seleccionar</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="categorias bg-light p-4 rounded shadow">
+                        <h3>Categoría 3</h3>
+                        <p>Descripción breve de la categoría 3.</p>
+                        <button id="botonenviar" class="btn btn-primary" onclick="window.location.href='./categorias/cat1.html'">¡Comenzar!</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="categorias bg-light p-4 rounded shadow">
+                        <h3>Categoría 4</h3>
+                        <p>Descripción breve de la categoría 4.</p>
+                        <button class="btn" onclick="selectCategory('categoria4.html')">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn mt-4" onclick="randomCategory()">¡Seleccionar Aleatoriamente!</button>
+        </div>
+    </div>
+</body>
+</html>
