@@ -21,6 +21,18 @@ body {
     
 }
 
+.contenedor-opciones {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contenedor-opciones >* {
+    flex-basis: 50%;
+}
+
+
+
 .question{
     /* body {
         font-family: Arial, sans-serif;
