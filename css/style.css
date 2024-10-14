@@ -73,7 +73,6 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     font-size: 20px;
-    margin: 50px auto;
     position: relative;
     clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
