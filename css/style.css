@@ -5,6 +5,10 @@
 
 body {
     margin: 0;
+    /* background-image: url('https://elfiltrador.com/wp-content/uploads/2019/10/vlcsnap-2019-10-03-02h20m45s802.jpg'); */
+    background-image: url('https://images.blacknut.com/61ea9bf192331724af996d02_hd.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 .background-image {
@@ -14,11 +18,13 @@ body {
     justify-content: center;
     align-items: center;
 }
-.fondos{
-    background: url('./fondos.jpeg'); 
-    background-size: cover;
-    background-position: center;
-    
+
+.container {
+    max-width: 670px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px 60px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contenedor-pregunta {
@@ -35,6 +41,7 @@ body {
 }
 
 .contenedor-opciones {
+    position: relative;
     display: grid;
     grid-template-columns: 45% 45%;
     justify-content: space-between;
@@ -42,9 +49,29 @@ body {
     margin: 0 -15px;
 }
 
-.contenedor-opciones >* {
+.contenedor-opciones >*:not(:last-child) {
     cursor: pointer;
     padding: 10px;
+}
+
+.contenedor-opciones .indicador-pregunta {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    &>span {
+        font-size: 2rem;
+        font-weight: 700;
+        border: 1px solid #000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        box-sizing: content-box;
+        box-shadow: 2px 2px 5px #2c3e50;
+    }
 }
 
 
@@ -68,16 +95,6 @@ body {
         margin-left: 20px;
     } */
     
-}
-
-
-
-.container {
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .text-center {
