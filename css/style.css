@@ -1,11 +1,15 @@
-body, html {
-    height: 1000%;
+*{
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
     margin: 0;
 }
 
 .background-image {
-    margin: 40px; /* Added 'px' unit */
-    height: 100vh;
+    margin: 40px;
+    min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +21,21 @@ body, html {
     
 }
 
+.contenedor-opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contenedor-opciones >* {
+    flex-basis: 50%;
+}
+
+
+
 .question{
-    body {
+    /* body {
         font-family: Arial, sans-serif;
         margin: 20px;
         background-color: #f9f9f9;
@@ -34,7 +51,7 @@ body, html {
     
     .options {
         margin-left: 20px;
-    }
+    } */
     
 }
 
@@ -48,6 +65,19 @@ body, html {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.contenedor-pregunta {
+    padding: 20px;
+    background: linear-gradient(90deg, #003399, #0051cc);
+    /* border: 5px solid white; */
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    position: relative;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
 .text-center {
     text-align: center;
 }
@@ -58,6 +88,7 @@ h1 {
 
 .mb-4 {
     margin: 2%;
+    margin-bottom: 3%;
 }
 
 p {
@@ -71,7 +102,6 @@ p {
     border: none;
     background-color: green;
     color: white;
-    width: 120px;
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.2s;
@@ -84,14 +114,18 @@ p {
 }
 
 .categorias {
+    display: block;
+    text-decoration: none;
     background-color: #e3f2fd;
     padding: 20px;
     border-radius: 8px;
     margin: 10px 0;
     transition: transform 0.2s, box-shadow 0.2s;
+    color: blueviolet;
 }
 
-.categorias:hover {
+.categorias:hover,
+.categorias.seleccionada {
     transform: scale(1.03);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -118,4 +152,12 @@ p {
     .container {
         padding: 20px; /* Adjust padding for smaller screens */
     }
+}
+
+.form-control {
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 15px;
 }

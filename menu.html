@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <title>Preguntin</title>
+    <!-- Fuente de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="background-image">
@@ -13,32 +17,28 @@
             <p><strong>Elige un tema que te apasione y sumérgete en el conocimiento.</strong></p>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="categorias bg-light p-4 rounded shadow">
-                        <h3>Categoría 1</h3>
+                    <a href="/categorias/cienciadedatos.html" target="_parent" class="categorias bg-light p-4 rounded shadow">
+                        <h3>Ciencia de Datos</h3>
                         <p>Descripción breve de la categoría 1.</p>
-                        <button class="btn" onclick="selectCategory('categoria1.html')">Seleccionar</button>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <div class="categorias bg-light p-4 rounded shadow">
-                        <h3>Categoría 2</h3>
+                    <a href="/categorias/astronomia.html" class="categorias bg-light p-4 rounded shadow">
+                        <h3>Astronomia</h3>
                         <p>Descripción breve de la categoría 2.</p>
-                        <button class="btn" onclick="selectCategory('categoria2.html')">Seleccionar</button>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <div class="categorias bg-light p-4 rounded shadow">
-                        <h3>Categoría 3</h3>
+                    <a href="/categorias/historia.html" class="categorias bg-light p-4 rounded shadow">
+                        <h3>Historia</h3>
                         <p>Descripción breve de la categoría 3.</p>
-                        <button id="botonenviar" class="btn btn-primary" onclick="window.location.href='./categorias/cat1.html'">¡Comenzar!</button>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-6">
-                    <div class="categorias bg-light p-4 rounded shadow">
-                        <h3>Categoría 4</h3>
+                    <a href="/categorias/deportes.html" class="categorias bg-light p-4 rounded shadow">
+                        <h3>Deportes</h3>
                         <p>Descripción breve de la categoría 4.</p>
-                        <button class="btn" onclick="selectCategory('categoria4.html')">Seleccionar</button>
-                    </div>
+                    </a>
                 </div>
             </div>
             <button class="btn mt-4" onclick="randomCategory()">¡Seleccionar Aleatoriamente!</button>
