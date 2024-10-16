@@ -17,14 +17,17 @@
     <div id="paginaHistoria" class="background-image">
         <div class="container text-center">
             <h1>Preguntas de Historia</h1>
-            <form id="quiz">
+            <div id="quiz">
                 <div class="question">
                     <p class="contenedor-pregunta">¿Quién fue el primer presidente de los Estados Unidos?</p>
-                    <input type="radio" name="q1" value="George Washington"> George Washington<br>
-                    <input type="radio" name="q1" value="Abraham Lincoln"> Abraham Lincoln<br>
-                    <input type="radio" name="q1" value="Thomas Jefferson"> Thomas Jefferson<br>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">George Washington</div>
+                        <div class="contenedor-pregunta">Abraham Lincoln</div>
+                        <div class="contenedor-pregunta">Thomas Jefferson</div>
+                        <div class="indicador-pregunta"><span>1</span></div>
+                    </div>
                 </div>
-                <div class="question">
+                <!-- <div class="question">
                     <p class="contenedor-pregunta">¿En qué año terminó la Segunda Guerra Mundial?</p>
                     <input type="radio" name="q2" value="1945"> 1945<br>
                     <input type="radio" name="q2" value="1944"> 1944<br>
@@ -90,11 +93,20 @@
                     <input type="radio" name="q12" value="Nueva Zelanda"> Nueva Zelanda<br>
                     <input type="radio" name="q12" value="Finlandia"> Finlandia<br>
                     <input type="radio" name="q12" value="Suecia"> Suecia<br>
-                </div>
-            </form>
+                </div> -->
+            </div>
         </div>
     </div>
-
+    <div class="contenido-fijo">
+        <div class="vidas">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+        </div>
+    
+    </div>
     <script src="../js/script.js"></script>
 </body>
 
