@@ -128,7 +128,7 @@ INSERT INTO `preguntas` (`id`, `pregunta`, `id_categoria`) VALUES
 (8, '¿Qué herramienta se utiliza comúnmente para visualizar datos?', 1),
 (9, '¿Qué es un modelo en ciencia de datos?', 1),
 (10, '¿Cuál es la función principal de un sistema operativo?', 1),
-(11, '¿Quien fue el creador del beisbol?', 4),
+(11, '¿Quien fue el creador del béisbol?', 4),
 (12, '¿En que año se realizo la primera edición de los juegos olímpicos modernos?', 4),
 (13, '¿Que selección gano el primer mundial de futbol?', 4),
 (14, '¿Cual es el jugador de baloncesto en anotar mas puntos en toda su carrera?', 4),
