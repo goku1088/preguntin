@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2024 a las 21:54:07
--- Versión del servidor: 8.0.36
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 18-10-2024 a las 04:01:03
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `id` tinyint NOT NULL,
-  `nombre` varchar(75) COLLATE utf8mb4_general_ci NOT NULL
+  `id` tinyint(4) NOT NULL,
+  `nombre` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -49,10 +49,10 @@ INSERT INTO `categorias` (`id`, `nombre`) VALUES
 --
 
 CREATE TABLE `opciones_respuesta` (
-  `id` tinyint NOT NULL,
-  `opcion` text COLLATE utf8mb4_general_ci NOT NULL,
-  `id_pregunta` tinyint DEFAULT NULL,
-  `es_correcta` tinyint(1) DEFAULT '0'
+  `id` tinyint(4) NOT NULL,
+  `opcion` text NOT NULL,
+  `id_pregunta` tinyint(4) DEFAULT NULL,
+  `es_correcta` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -108,9 +108,9 @@ INSERT INTO `opciones_respuesta` (`id`, `opcion`, `id_pregunta`, `es_correcta`) 
 --
 
 CREATE TABLE `preguntas` (
-  `id` tinyint NOT NULL,
-  `pregunta` text COLLATE utf8mb4_general_ci NOT NULL,
-  `id_categoria` tinyint DEFAULT NULL
+  `id` tinyint(4) NOT NULL,
+  `pregunta` text NOT NULL,
+  `id_categoria` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,7 +127,17 @@ INSERT INTO `preguntas` (`id`, `pregunta`, `id_categoria`) VALUES
 (7, '¿Cuál de las siguientes es una técnica de aprendizaje automático?', 1),
 (8, '¿Qué herramienta se utiliza comúnmente para visualizar datos?', 1),
 (9, '¿Qué es un modelo en ciencia de datos?', 1),
-(10, '¿Cuál es la función principal de un sistema operativo?', 1);
+(10, '¿Cuál es la función principal de un sistema operativo?', 1),
+(11, '¿Quien fue el creador del beisbol?', 4),
+(12, '¿En que año se realizo la primera edición de los juegos olímpicos modernos?', 4),
+(13, '¿Que selección gano el primer mundial de futbol?', 4),
+(14, '¿Cual es el jugador de baloncesto en anotar mas puntos en toda su carrera?', 4),
+(15, '¿Cual fue el primer campeón de la copa libertadores?', 4),
+(16, '¿Quien es el máximo ganador de la copa libertadores?', 4),
+(17, '¿Cual fue el primer campeón de la copa América?', 4),
+(18, '¿Cual es el máximo campeón del Grand Slam?', 4),
+(19, '¿Cuando se realizo la primera edición de el Grand Slam?', 4),
+(20, '¿Cuándo se realizo la primera edición de la formula1?', 4);
 
 --
 -- Índices para tablas volcadas
@@ -161,19 +171,19 @@ ALTER TABLE `preguntas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `opciones_respuesta`
 --
 ALTER TABLE `opciones_respuesta`
-  MODIFY `id` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `id` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
