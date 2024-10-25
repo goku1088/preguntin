@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2024 a las 04:01:03
+-- Tiempo de generación: 25-10-2024 a las 04:13:04
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -99,7 +99,47 @@ INSERT INTO `opciones_respuesta` (`id`, `opcion`, `id_pregunta`, `es_correcta`) 
 (37, 'Gestionar recursos de hardware y software', 10, 1),
 (38, 'Proporcionar herramientas de programación', 10, 0),
 (39, 'Procesar datos científicos', 10, 0),
-(40, 'Diseñar interfaces gráficas', 10, 0);
+(40, 'Diseñar interfaces gráficas', 10, 0),
+(41, ' Babe Ruth', 11, 0),
+(42, 'Abner Doubleday', 11, 0),
+(43, 'Jackie Robinson', 11, 0),
+(44, 'Alexander Cartwrigh', 11, 1),
+(49, '1900', 12, 0),
+(50, '1896', 12, 1),
+(51, '1884', 12, 0),
+(52, '1920', 12, 0),
+(53, 'Uruguay', 13, 1),
+(54, 'Argentina', 13, 0),
+(55, 'Italia', 13, 0),
+(56, 'Brasil', 13, 0),
+(57, 'Shaquille O\'Neal', 14, 0),
+(58, 'Larry Bird', 14, 0),
+(59, ' LeBron James', 14, 1),
+(60, 'Michael Jordan', 14, 0),
+(61, 'River Plate', 15, 0),
+(62, 'Peñarol', 15, 1),
+(63, 'Boca Juniors', 15, 0),
+(64, 'Santos', 15, 0),
+(65, 'Flamengo', 16, 0),
+(66, 'Nacional', 16, 0),
+(67, 'Independiente', 16, 1),
+(68, 'Boca Juniors', 16, 0),
+(69, 'Argentina', 17, 0),
+(70, 'Brasil', 17, 0),
+(71, 'Uruguay', 17, 1),
+(72, 'Chile', 17, 0),
+(73, 'Pete Sampras', 18, 0),
+(74, 'Novak Djokovic', 18, 1),
+(75, 'Roger Federer', 18, 0),
+(76, 'Rafael Nadal', 18, 0),
+(77, '1923', 19, 0),
+(78, '1896', 19, 0),
+(79, '1930', 19, 0),
+(80, '1877', 19, 1),
+(81, '1945', 20, 0),
+(82, '1940', 20, 0),
+(83, '1963', 20, 0),
+(84, '1950', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -177,7 +217,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `opciones_respuesta`
 --
 ALTER TABLE `opciones_respuesta`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
