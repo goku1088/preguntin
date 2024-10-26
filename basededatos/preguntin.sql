@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-10-2024 a las 04:13:04
+-- Tiempo de generación: 26-10-2024 a las 02:42:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -139,7 +139,47 @@ INSERT INTO `opciones_respuesta` (`id`, `opcion`, `id_pregunta`, `es_correcta`) 
 (81, '1945', 20, 0),
 (82, '1940', 20, 0),
 (83, '1963', 20, 0),
-(84, '1950', 20, 1);
+(84, '1950', 20, 1),
+(85, 'Júpiter', 21, 1),
+(86, 'Tierra', 21, 0),
+(87, 'Saturno', 21, 0),
+(88, 'Marte', 21, 0),
+(89, 'Eclipse solar', 22, 0),
+(90, 'Eclipse lunar', 22, 1),
+(91, 'Conjunción', 22, 0),
+(92, 'Transito', 22, 0),
+(93, 'Próxima Centauri', 23, 0),
+(94, 'Sirius', 23, 0),
+(95, 'Alpha Centauri', 23, 0),
+(96, 'Betelgeuse', 23, 0),
+(97, 'Marte', 24, 1),
+(98, 'Venus', 24, 0),
+(99, 'Mercurio', 24, 0),
+(100, 'Júpiter', 24, 0),
+(101, 'Vía Láctea', 25, 1),
+(102, 'Galaxia de Andrómeda', 25, 0),
+(103, 'Galaxia del Sombrero', 25, 0),
+(104, 'Galaxia del Escultor', 25, 0),
+(105, 'Un área del espacio con gravedad tan fuerte que nada puede escapar de ella', 26, 1),
+(106, 'Un planeta muy denso', 26, 0),
+(107, 'Un tipo de estrella', 26, 0),
+(108, 'Un satélite natural', 26, 0),
+(109, 'Luna', 27, 1),
+(110, 'Europa', 27, 0),
+(111, 'Fobos', 27, 0),
+(112, 'Titan', 27, 0),
+(113, 'Venus', 28, 0),
+(114, 'Mercurio', 28, 0),
+(115, 'Marte', 28, 0),
+(116, 'Júpiter', 28, 0),
+(117, 'Estrella amarilla', 29, 1),
+(118, 'Enana roja', 29, 0),
+(119, 'Estrella de neutrones', 29, 0),
+(120, 'Gigante azul', 29, 0),
+(121, 'Un grupo de estrellas que forman un patrón reconocible', 30, 1),
+(122, 'Un grupo de planetas', 30, 0),
+(123, 'Un tipo de galaxia', 30, 0),
+(124, 'Un fenómeno astronómico', 30, 0);
 
 -- --------------------------------------------------------
 
@@ -177,7 +217,17 @@ INSERT INTO `preguntas` (`id`, `pregunta`, `id_categoria`) VALUES
 (17, '¿Cual fue el primer campeón de la copa América?', 4),
 (18, '¿Cual es el máximo campeón del Grand Slam?', 4),
 (19, '¿Cuando se realizo la primera edición de el Grand Slam?', 4),
-(20, '¿Cuándo se realizo la primera edición de la formula1?', 4);
+(20, '¿Cuándo se realizo la primera edición de la formula1?', 4),
+(21, 'Cuál es el planeta más grande del sistema solar', 2),
+(22, 'Qué fenómeno se produce cuando la Luna pasa entre la Tierra y el Sol', 2),
+(23, 'Cuál es la estrella más cercana a la Tierra', 2),
+(24, 'Qué planeta es conocido como el planeta rojo', 2),
+(25, 'Cuál es el nombre de la galaxia en la que vivimos', 2),
+(26, 'Qué es un agujero negro', 2),
+(27, 'Cuál es el satélite natural de la Tierra', 2),
+(28, 'Qué planeta tiene el día más largo en comparación con su año', 2),
+(29, 'Qué tipo de estrella es el Sol', 2),
+(30, 'Qué se entiende por constelación', 2);
 
 --
 -- Índices para tablas volcadas
@@ -217,13 +267,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `opciones_respuesta`
 --
 ALTER TABLE `opciones_respuesta`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restricciones para tablas volcadas
