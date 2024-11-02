@@ -10,3 +10,4 @@ function randomCategory() {
     categoria.classList.add("seleccionada");
     setTimeout(() => window.location.href = categories[randomIndex], 1000);
 }
+
