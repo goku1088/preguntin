@@ -11,3 +11,11 @@ function randomCategory() {
     setTimeout(() => window.location.href = categories[randomIndex], 1000);
 }
 
+const opcionesRespuesta = document.querySelectorAll(".contenedor-opciones>.contenedor-pregunta")
+console.log(opcionesRespuesta)
+opcionesRespuesta.forEach((opcion, indice)=>{
+    opcion.addEventListener("click", ()=>{
+        opcion.classList.add("cambiar-color")
+    });
+});
+
