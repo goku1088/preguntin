@@ -56,6 +56,22 @@ p {
     color: currentColor;
 }
 
+.nombre {
+    padding: .5rem 0;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: #8fa9ca;
+    background-color: #7680a34d;
+    box-shadow: 3px 3px #848baf;
+}
+
+.nombre::first-letter {
+    text-transform: uppercase;
+}
+
 .contenedor-opciones {
     position: relative;
     display: grid;
@@ -94,8 +110,8 @@ p {
 
 .contenido-fijo {
     position: fixed;
-    top: 50px;
-    right: 30px;
+    top: 100px;
+    right: 50px;
     background-color: #ccc;
     padding: 1rem .75rem;
     border-radius: 5px;

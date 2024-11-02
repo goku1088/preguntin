@@ -124,6 +124,7 @@
         </div>
     </div>
     <div class="contenido-fijo">
+        <div class="nombre"></div>
         <div class="vidas">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
@@ -133,6 +134,11 @@
         </div>
         
     </div>
+    <script>
+        const datos = JSON.parse(sessionStorage.getItem("datos"));
+        const nombre = document.querySelector(".nombre");
+        nombre.textContent = datos.nombre;
+    </script>
     <script src="../js/script.js"></script>
 </body>
 

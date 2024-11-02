@@ -29,6 +29,7 @@
         function comenzarJuego(){
             const inputNombre = document.querySelector("#nombre").value.trim();
             if (inputNombre) {
+                sessionStorage.setItem("datos", JSON.stringify({nombre: inputNombre}))
                 window.location.href = 'menu.html';
             } else {
                 alert("Ingrese un nombre");
