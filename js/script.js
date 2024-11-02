@@ -52,11 +52,4 @@ function respuesta2(opcion) {
     } else {
         respuestasIncorrectas++;
         resultadoDiv.textContent = 'opcion incorrecta'
-    }
-    mostrarResultadosFinales();
-}
-
-function mostrarResultadosFinales() {
-    const resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.textContent += `\n¡Cuestionario terminado! Respuestas correctas: ${respuestasCorrectas}, Respuestas incorrectas: ${respuestasIncorrectas}`;
-}
+    }}
