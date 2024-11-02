@@ -207,3 +207,16 @@ h1 {
         padding: 20px;
     }
 }
+
+.question {
+    display: none; /* Oculta todas las preguntas inicialmente */
+}
+
+.contenedor-pregunta {
+    margin: 10px 0;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+}

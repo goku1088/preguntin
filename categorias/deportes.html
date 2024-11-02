@@ -18,29 +18,47 @@
         <div class="container text-center">
             <h1>Preguntas de Deportes</h1>
             <div id="quiz">
-                <div class="question">
+                <div class="question" id="pregunta1">
                     <p class="contenedor-pregunta">¿Quien fue el creador del beisbol?</p>
                     <div class="contenedor-opciones">
-                        <div class="contenedor-pregunta">Babe Ruth</div>
-                        <div class="contenedor-pregunta">Abner Doubleday</div>
-                        <div class="contenedor-pregunta">Jackie Robinson</div>
-                        <div class="contenedor-pregunta">Alexander Cartwrigh</div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Babe Ruth')"> Babe Ruth</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Abner Doubleday')">Abner Doubleday</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Jackie Robinson')">Jackie Robinson</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Alexander Cartwrigh')">Alexander Cartwrigh</button>
+                        </div>
                         <div class="indicador-pregunta"><span>1</span></div>
                     </div>
+                    <div id="resultado"></div>
                 </div>
 
-                <div class="question">
+                <div class="question" id="pregunta2">
                     <p class="contenedor-pregunta">¿En que año se realizo la primera edición de los juegos olímpicos modernos?</p>
                     <div class="contenedor-opciones">
-                        <div class="contenedor-pregunta">1900</div>
-                        <div class="contenedor-pregunta">1896</div>
-                        <div class="contenedor-pregunta">1884</div>
-                        <div class="contenedor-pregunta">1920</div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1900')"> 1900</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1896')"> 1896</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1884')"> 1884</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1920')">1920</button> 
+                        </div>
                         <div class="indicador-pregunta"><span>2</span></div>
-                    </div>    
+                    </div>  
+                    <div id="resultado"></div>  
                 </div>
-
-                <!-- <div class="question">
+            </div>
+                <!--<div class="question">
                     <p class="contenedor-pregunta">¿Que selección gano el primer mundial de futbol?</p>
                     <div class="contenedor-opciones">
                         <div class="contenedor-pregunta">Uruguay</div>
