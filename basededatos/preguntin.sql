@@ -112,7 +112,7 @@ INSERT INTO `opciones_respuesta` (`id`, `opcion`, `id_pregunta`, `es_correcta`) 
 (54, 'Argentina', 13, 0),
 (55, 'Italia', 13, 0),
 (56, 'Brasil', 13, 0),
-(57, 'Shaquille O\'Neal', 14, 0),
+(57, 'Shaquille O Neal', 14, 0),
 (58, 'Larry Bird', 14, 0),
 (59, ' LeBron James', 14, 1),
 (60, 'Michael Jordan', 14, 0),
