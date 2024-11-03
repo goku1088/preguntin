@@ -148,4 +148,8 @@ function mostrarResultadoFinal() {
 }
 
 mostrarPregunta(ordenPreguntas[posicionActual]);
-actualizarVidas(); 
+actualizarVidas();
+
+
+
+
