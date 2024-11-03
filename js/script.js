@@ -54,7 +54,6 @@ function actualizarVidas() {
     for (let i = 0; i < maxVidas; i++) {
         const heart = document.createElement('img');
         heart.src = '../img/heart-solid.svg';
-        heart.alt = 'icono de un corazón';
         if (i >= intentosRestantes) {
             heart.src = '../img/heart-regular.svg'; 
         }
