@@ -19,10 +19,17 @@ opcionesRespuesta.forEach((opcion, indice)=>{
     });
 });
 
+let ordenPreguntas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function obtenerPreguntasAleatorias(preguntas, cantidad) {
+    return preguntas.sort(() => Math.random() - 0.5).slice(0, cantidad);
+}
+
+ordenPreguntas = obtenerPreguntasAleatorias(ordenPreguntas, 5);
+let posicionActual = 0;
 let respuestasCorrectas = 0;
 let respuestasIncorrectas = 0;
-
-document.getElementById('pregunta1').style.display = 'block';
+let intentosRestantes = 5;
+const maxVidas = 5;
 
 function mostrarPregunta(numero) {
     const preguntas = document.querySelectorAll('.question');
@@ -32,24 +39,113 @@ function mostrarPregunta(numero) {
     document.getElementById('pregunta' + numero).style.display = 'block'; 
 }
 
-function respuesta1(opcion) {
-    const resultadoDiv = document.getElementById('resultado');
-    if (opcion === 'Abner Doubleday') {
-        respuestasCorrectas++;
-        resultadoDiv.textContent = 'opcion correcta';
-        mostrarPregunta(2);
+function siguientePregunta() {
+    posicionActual++;
+    if (posicionActual < ordenPreguntas.length) {
+        mostrarPregunta(ordenPreguntas[posicionActual]);
     } else {
-        respuestasIncorrectas++;
-        resultadoDiv.textContent = 'opcion incorrecta'
+        mostrarResultadoFinal();
     }
 }
 
-function respuesta2(opcion) {
-    const resultadoDiv = document.getElementById('resultado');
-    if (opcion === '1896') {
+function actualizarVidas() {
+    const vidasDiv = document.getElementById('vidas');
+    vidasDiv.innerHTML = ''; 
+    for (let i = 0; i < maxVidas; i++) {
+        const heart = document.createElement('img');
+        heart.src = '../img/heart-solid.svg';
+        heart.alt = 'icono de un corazón';
+        if (i >= intentosRestantes) {
+            heart.src = '../img/heart-regular.svg'; 
+        }
+        vidasDiv.appendChild(heart);
+    }
+}
+
+function verificarRespuesta(correcta, opcion) {
+    if (opcion === correcta) {
         respuestasCorrectas++;
-        resultadoDiv.textContent = 'opcion correcta'
+        return true;
     } else {
         respuestasIncorrectas++;
-        resultadoDiv.textContent = 'opcion incorrecta'
-    }}
+        intentosRestantes--;
+        actualizarVidas(); 
+        if (intentosRestantes === 0) {
+            mostrarResultadoFinal(); 
+            return false;
+        }
+        return false;
+    }
+}
+
+function respuesta1(opcion) {
+    verificarRespuesta('Abner Doubleday', opcion);
+    siguientePregunta();
+}
+
+function respuesta2(opcion) {
+    verificarRespuesta('1896', opcion);
+    siguientePregunta();
+}
+
+function respuesta3(opcion) {
+    verificarRespuesta('Uruguay', opcion);
+    siguientePregunta();
+}
+
+function respuesta4(opcion) {
+    verificarRespuesta('LeBron James', opcion);
+    siguientePregunta();
+}
+
+function respuesta5(opcion) {
+    verificarRespuesta('Peñarol', opcion);
+    siguientePregunta();
+}
+
+function respuesta6(opcion) {
+    verificarRespuesta('Independiente', opcion);
+    siguientePregunta();
+}
+
+function respuesta7(opcion) {
+    verificarRespuesta('Uruguay', opcion);
+    siguientePregunta();
+}
+
+function respuesta8(opcion) {
+    verificarRespuesta('Novak Djokovic', opcion);
+    siguientePregunta();
+}
+
+function respuesta9(opcion) {
+    verificarRespuesta('1877', opcion);
+    siguientePregunta();
+}
+
+function respuesta10(opcion) {
+    verificarRespuesta('1950', opcion);
+    siguientePregunta();
+}
+
+function mostrarResultadoFinal() {
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `
+        <p>Juego terminado</p>
+        <p>Respuestas correctas: ${respuestasCorrectas}</p>
+        <p>Respuestas incorrectas: ${respuestasIncorrectas}</p>
+        <p>Intentos restantes: ${intentosRestantes}</p>
+    `;
+
+    if (intentosRestantes === 0) {
+        const icono = document.createElement('img');
+        icono.src = '../img/no-intents.svg';
+        icono.alt = 'No quedan intentos';
+        icono.style.width = '50px';
+        icono.style.display = 'block';
+        resultadoDiv.appendChild(icono);
+    }
+}
+
+mostrarPregunta(ordenPreguntas[posicionActual]);
+actualizarVidas(); 
