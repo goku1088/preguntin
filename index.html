@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de preguntas</title>
+    <title>Preguntin</title>
+    <!-- Fuente de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    
 
-    <script src="./js/script.js"></script>
+<body>
+    <div class="background-image">
+        <div class="container text-center">
+            <h1 class="mb-4">¡Bienvenido a Preguntin!</h1>
+            <p class="lead mb-4">¿Cuánto sabes sobre cultura general? ¡Demuestra tus conocimientos!</p>
+            <div class="mb-4">
+                <label for="nombre" class="form-label">Ingresa tu nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre">
+            </div>
+            <button onclick="comenzarJuego()" class="btn btn-primary">¡Comenzar!</button>
+        </div>
+    </div>
+    <script>
+        function comenzarJuego(){
+            const inputNombre = document.querySelector("#nombre").value.trim();
+            if (inputNombre) {
+                sessionStorage.setItem("datos", JSON.stringify({nombre: inputNombre}))
+                window.location.href = 'menu.html';
+            } else {
+                alert("Ingrese un nombre");
+            }
+        }
+    </script>
 </body>
+
 </html>

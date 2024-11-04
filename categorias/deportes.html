@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Deportes</title>
+    <!-- Fuente de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+    <div id="paginaDeportes" class="background-image">
+        <div class="container text-center">
+            <h1>Preguntas de Deportes</h1>
+            <div id="quiz">
+                <div id="resultado"></div>
+                <div class="question" id="pregunta1">
+                    <p class="contenedor-pregunta">¿Quien fue el creador del beisbol?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Babe Ruth')"> Babe Ruth</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Abner Doubleday')">Abner Doubleday</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Jackie Robinson')">Jackie Robinson</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Alexander Cartwrigh')">Alexander Cartwrigh</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>1</span></div>
+                    </div>
+                </div>
+
+                <div class="question" id="pregunta2">
+                    <p class="contenedor-pregunta">¿En que año se realizo la primera edición de los juegos olímpicos modernos?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1900')"> 1900</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1896')"> 1896</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1884')"> 1884</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1920')">1920</button> 
+                        </div>
+                        <div class="indicador-pregunta"><span>2</span></div>
+                    </div>   
+                </div>
+
+                <div class="question" id="pregunta3">
+                    <p class="contenedor-pregunta">¿Que selección gano el primer mundial de futbol?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Uruguay')">Uruguay</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Argentina')">Argentina</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Italia')">Italia</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Brasil')">Brasil</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>3</span></div>
+                    </div>  
+                </div>
+    
+                <div class="question" id="pregunta4">
+                    <p class="contenedor-pregunta">¿Cual es el jugador de baloncesto en anotar mas puntos en toda su carrera?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Shaquille O Neal')">Shaquille O Neal</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Larry Bird')">Larry Bird</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('LeBron James')">LeBron James</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Michael Jordan')">Michael Jordan</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>4</span></div>
+                    </div>   
+                </div>
+            
+                <div class="question" id="pregunta5">
+                    <p class="contenedor-pregunta">¿Cual fue el primer campeón de la copa libertadores?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('River Plate')"> River Plate</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Peñarol')">Peñarol</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Boca Juniors')">Boca Juniors</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Santos')">Santos</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>5</span></div>
+                    </div> 
+                </div>
+
+                <div class="question" id="pregunta6">
+                    <p class="contenedor-pregunta">¿Quien es el máximo ganador de la copa libertadores?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Flamengo')">Flamengo</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Nacional')">Nacional</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Independiente')">Independiente</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Boca Juniors')">Boca Juniors</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>6</span></div>
+                    </div> 
+                </div>
+
+                <div class="question" id="pregunta7">
+                    <p class="contenedor-pregunta">¿Cual fue el primer campeón de la copa América?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Argentina')">Argentina</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Brasil')">Brasil</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Uruguay')">Uruguay</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Chile')">Chile</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>7</span></div>
+                    </div> 
+                </div>
+
+                <div class="question" id="pregunta8">
+                    <p class="contenedor-pregunta">¿Cual es el máximo campeón del Grand Slam?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Pete Sampras')">Pete Sampras</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Novak Djokovic')">Novak Djokovic</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Roger Federer')">Roger Federer</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Rafael Nadal')">Rafael Nadal</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>8</span></div>
+                    </div> 
+                </div>
+                
+                <div class="question" id="pregunta9">
+                    <p class="contenedor-pregunta">¿Cuando se realizo la primera edición de el Grand Slam?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1923')">1923</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1896')">1896</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1930')">1930</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1877')">1877</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>9</span></div>
+                    </div> 
+                </div>
+
+                <div class="question" id="pregunta10">
+                    <p class="contenedor-pregunta">¿Cuándo se realizo la primera edición de la formula1?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1945')">1945</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1940')">1940</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1963')">1963</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1950')">1950</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>10</span></div>
+                    </div> 
+                </div> 
+
+            </div>
+        </div>
+    </div>
+    <div class="contenido-fijo">
+        <div class="nombre"></div>
+        <div class="vidas" id="vidas">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+            <img src="../img/heart-solid.svg" alt="icono de un corazón">
+        </div>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        const datos = JSON.parse(sessionStorage.getItem("datos"));
+        const nombre = document.querySelector(".nombre");
+        nombre.textContent = datos.nombre;
+    </script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
