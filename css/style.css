@@ -32,10 +32,6 @@ p {
     animation: show 2s forwards;
 }
 
-.cambiar-color {
-    background-color: orangered;
-}
-
 @keyframes show {
     from {
         translate: 0 50px;
@@ -56,14 +52,13 @@ p {
 .contenedor-pregunta {
     padding: 20px;
     background-color: #6610f2;
-    /* border: 5px solid white; */
     text-align: center;
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: 20px;
     position: relative;
     clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
 }
 
 .contenedor-pregunta p {
@@ -93,13 +88,20 @@ p {
     justify-content: space-between;
     align-items: baseline;
     gap: 1.5rem;
-    margin: 0 -15px;
+    margin: 30px -15px 0;
 }
 
 .contenedor-opciones >*:not(:last-child) {
     background: linear-gradient(90deg, #003399, #0051cc);
+    /* background-color: #8fa9ca; */
     cursor: pointer;
-    padding: 10px;
+    padding: 12px 10px;
+    transition: background-color 0.5s;
+    /* transition-property: background; */
+}
+
+.cambiar-color {
+    background: orangered !important;
 }
 
 .contenedor-opciones .indicador-pregunta {

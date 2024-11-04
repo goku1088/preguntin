@@ -15,7 +15,12 @@ const opcionesRespuesta = document.querySelectorAll(".contenedor-opciones>.conte
 console.log(opcionesRespuesta)
 opcionesRespuesta.forEach((opcion, indice)=>{
     opcion.addEventListener("click", ()=>{
-        opcion.classList.add("cambiar-color")
+        const div = document.createElement("div")
+        div.style.backgroundColor = "orangered";
+        // opcion.style.background = "orangered";
+        const elemento = document.querySelector(".cambiar-color");
+        if (!elemento) opcion.classList.add("cambiar-color");
+        
     });
 });
 
