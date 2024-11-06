@@ -11,22 +11,6 @@ function randomCategory() {
     setTimeout(() => window.location.href = categories[randomIndex], 1000);
 }
 
-<<<<<<< HEAD
-// script.js
-fetch('../controladores/conexion.php')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        // Aquí puedes manipular los datos como desees
-        const container = document.getElementById('preguntas-container');
-        data.forEach(item => {
-            const preguntaElement = document.createElement('div');
-            preguntaElement.innerHTML = `<strong>${item.pregunta}</strong>: ${item.respuesta || 'Sin respuesta'}`;
-            container.appendChild(preguntaElement);
-        });
-    })
-    .catch(error => console.error('Error:', error));
-=======
 const opcionesRespuesta = document.querySelectorAll(".contenedor-opciones>.contenedor-pregunta")
 console.log(opcionesRespuesta)
 opcionesRespuesta.forEach((opcion, indice)=>{
@@ -166,4 +150,62 @@ actualizarVidas();
 
 
 
->>>>>>> a5df6b985277137b40b3c522c7cd1d67204fda79
+/*tiempo y vidas*/
+let timeLeft = 20;
+let lives = 5;
+const timerElement = document.getElementById('timer');
+const livesElement = document.getElementById('lives');
+const questionElement = document.getElementById('question');
+const feedbackElement = document.getElementById('feedback');
+const questions = [];
+let currentQuestionIndex = 0;
+
+function addNewQuestion() {
+    const newQuestion = prompt("Introduce una nueva pregunta:");
+    if (newQuestion) {
+        questions.push(newQuestion);
+        if (questions.length === 1) {
+            questionElement.innerHTML = newQuestion;
+            startTimer();
+        }
+    }
+}
+
+function showNextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        questionElement.innerHTML = questions[currentQuestionIndex];
+        feedbackElement.innerHTML = "";
+        timeLeft = 20;
+        startTimer();
+    } else {
+        feedbackElement.innerHTML = "Has llegado al final de las preguntas. Añade más para continuar.";
+    }
+}
+
+function startTimer() {
+    const countdown = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            lives--;
+            livesElement.innerHTML = `Vidas: ${lives}`;
+            feedbackElement.innerHTML = "¡Se acabó el tiempo! Pasando a la siguiente pregunta...";
+            if (lives > 0) {
+                showNextQuestion();
+            } else {
+                questionElement.innerHTML = "¡Juego terminado!";
+                timerElement.innerHTML = "";
+                feedbackElement.innerHTML = "Lo hiciste genial, pero te quedaste sin vidas. ¡Inténtalo de nuevo!";
+            }
+        } else {
+            timerElement.innerHTML = timeLeft;
+        }
+        timeLeft -= 1;
+    }, 1000);
+}
+
+// Inicializar el primer temporizador cuando se añade la primera pregunta
+if (questions.length > 0) {
+    questionElement.innerHTML = questions[currentQuestionIndex];
+    startTimer();
+}
