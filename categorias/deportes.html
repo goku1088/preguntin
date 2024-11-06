@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<body>
 
 <head>
     <meta charset="UTF-8">
@@ -13,100 +14,214 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
     <div id="paginaDeportes" class="background-image">
         <div class="container text-center">
             <h1>Preguntas de Deportes</h1>
             <div id="quiz">
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Cuál es el deporte más popular del mundo?</p>
+                <div id="resultado"></div>
+                <div class="question" id="pregunta1">
+                    <p class="contenedor-pregunta">¿Quien fue el creador del beisbol?</p>
                     <div class="contenedor-opciones">
-                        <div class="contenedor-pregunta">Fútbol</div>
-                        <div class="contenedor-pregunta">Baloncesto</div>
-                        <div class="contenedor-pregunta">Tenis</div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Babe Ruth')"> Babe Ruth</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Abner Doubleday')">Abner Doubleday</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Jackie Robinson')">Jackie Robinson</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta1('Alexander Cartwrigh')">Alexander Cartwrigh</button>
+                        </div>
                         <div class="indicador-pregunta"><span>1</span></div>
                     </div>
                 </div>
-                <!-- <div class="question">
-                    <p class="contenedor-pregunta">¿Qué país ganó la Copa del Mundo de 2018?</p>
-                    <input type="radio" name="q2" value="Francia"> Francia<br>
-                    <input type="radio" name="q2" value="Brasil"> Brasil<br>
-                    <input type="radio" name="q2" value="Alemania"> Alemania<br>
+
+                <div class="question" id="pregunta2">
+                    <p class="contenedor-pregunta">¿En que año se realizo la primera edición de los juegos olímpicos modernos?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1900')"> 1900</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1896')"> 1896</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1884')"> 1884</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta2('1920')">1920</button> 
+                        </div>
+                        <div class="indicador-pregunta"><span>2</span></div>
+                    </div>   
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Cuál es el deporte de los Juegos Olímpicos en el que se utiliza una pista ovalada?</p>
-                    <input type="radio" name="q3" value="Ciclismo"> Ciclismo<br>
-                    <input type="radio" name="q3" value="Atletismo"> Atletismo<br>
-                    <input type="radio" name="q3" value="Natación"> Natación<br>
+
+                <div class="question" id="pregunta3">
+                    <p class="contenedor-pregunta">¿Que selección gano el primer mundial de futbol?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Uruguay')">Uruguay</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Argentina')">Argentina</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Italia')">Italia</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta3('Brasil')">Brasil</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>3</span></div>
+                    </div>  
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Quién es conocido como "El Rey del Fútbol"?</p>
-                    <input type="radio" name="q4" value="Pelé"> Pelé<br>
-                    <input type="radio" name="q4" value="Maradona"> Maradona<br>
-                    <input type="radio" name="q4" value="Cristiano Ronaldo"> Cristiano Ronaldo<br>
+    
+                <div class="question" id="pregunta4">
+                    <p class="contenedor-pregunta">¿Cual es el jugador de baloncesto en anotar mas puntos en toda su carrera?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Shaquille O Neal')">Shaquille O Neal</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Larry Bird')">Larry Bird</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('LeBron James')">LeBron James</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta4('Michael Jordan')">Michael Jordan</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>4</span></div>
+                    </div>   
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿En qué deporte se compite por el "Grand Slam"?</p>
-                    <input type="radio" name="q5" value="Tenis"> Tenis<br>
-                    <input type="radio" name="q5" value="Golf"> Golf<br>
-                    <input type="radio" name="q5" value="Boxeo"> Boxeo<br>
+            
+                <div class="question" id="pregunta5">
+                    <p class="contenedor-pregunta">¿Cual fue el primer campeón de la copa libertadores?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('River Plate')"> River Plate</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Peñarol')">Peñarol</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Boca Juniors')">Boca Juniors</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta5('Santos')">Santos</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>5</span></div>
+                    </div> 
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Cuántos jugadores hay en un equipo de fútbol?</p>
-                    <input type="radio" name="q6" value="11"> 11<br>
-                    <input type="radio" name="q6" value="9"> 9<br>
-                    <input type="radio" name="q6" value="7"> 7<br>
+
+                <div class="question" id="pregunta6">
+                    <p class="contenedor-pregunta">¿Quien es el máximo ganador de la copa libertadores?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Flamengo')">Flamengo</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Nacional')">Nacional</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Independiente')">Independiente</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta6('Boca Juniors')">Boca Juniors</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>6</span></div>
+                    </div> 
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Cuál es el país de origen del rugby?</p>
-                    <input type="radio" name="q7" value="Inglaterra"> Inglaterra<br>
-                    <input type="radio" name="q7" value="Francia"> Francia<br>
-                    <input type="radio" name="q7" value="Australia"> Australia<br>
+
+                <div class="question" id="pregunta7">
+                    <p class="contenedor-pregunta">¿Cual fue el primer campeón de la copa América?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Argentina')">Argentina</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Brasil')">Brasil</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Uruguay')">Uruguay</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta7('Chile')">Chile</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>7</span></div>
+                    </div> 
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Qué es el Tour de Francia?</p>
-                    <input type="radio" name="q8" value="Una carrera de ciclismo"> Una carrera de ciclismo<br>
-                    <input type="radio" name="q8" value="Un torneo de fútbol"> Un torneo de fútbol<br>
-                    <input type="radio" name="q8" value="Un campeonato de natación"> Un campeonato de natación<br>
+
+                <div class="question" id="pregunta8">
+                    <p class="contenedor-pregunta">¿Cual es el máximo campeón del Grand Slam?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Pete Sampras')">Pete Sampras</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Novak Djokovic')">Novak Djokovic</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Roger Federer')">Roger Federer</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta8('Rafael Nadal')">Rafael Nadal</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>8</span></div>
+                    </div> 
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Quién tiene el récord de más medallas olímpicas?</p>
-                    <input type="radio" name="q9" value="Michael Phelps"> Michael Phelps<br>
-                    <input type="radio" name="q9" value="Usain Bolt"> Usain Bolt<br>
-                    <input type="radio" name="q9" value="Carl Lewis"> Carl Lewis<br>
+                
+                <div class="question" id="pregunta9">
+                    <p class="contenedor-pregunta">¿Cuando se realizo la primera edición de el Grand Slam?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1923')">1923</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1896')">1896</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1930')">1930</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta9('1877')">1877</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>9</span></div>
+                    </div> 
                 </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿En qué deporte se utiliza el término "home run"?</p>
-                    <input type="radio" name="q10" value="Béisbol"> Béisbol<br>
-                    <input type="radio" name="q10" value="Críquet"> Críquet<br>
-                    <input type="radio" name="q10" value="Hockey"> Hockey<br>
-                </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Quién fue el primer jugador en conseguir 100 puntos en un partido de la NBA?</p>
-                    <input type="radio" name="q11" value="Wilt Chamberlain"> Wilt Chamberlain<br>
-                    <input type="radio" name="q11" value="Kobe Bryant"> Kobe Bryant<br>
-                    <input type="radio" name="q11" value="Michael Jordan"> Michael Jordan<br>
-                </div>
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Qué evento deportivo se celebra cada cuatro años y reúne a los mejores atletas del mundo?
-                    </p>
-                    <input type="radio" name="q12" value="Los Juegos Olímpicos"> Los Juegos Olímpicos<br>
-                    <input type="radio" name="q12" value="La Copa Mundial de Fútbol"> La Copa Mundial de Fútbol<br>
-                    <input type="radio" name="q12" value="El Super Bowl"> El Super Bowl<br>
-                </div> -->
+
+                <div class="question" id="pregunta10">
+                    <p class="contenedor-pregunta">¿Cuándo se realizo la primera edición de la formula1?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1945')">1945</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1940')">1940</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1963')">1963</button>
+                        </div>
+                        <div class="contenedor-pregunta">
+                            <button type="button" onclick="respuesta10('1950')">1950</button>
+                        </div>
+                        <div class="indicador-pregunta"><span>10</span></div>
+                    </div> 
+                </div> 
+
             </div>
         </div>
     </div>
     <div class="contenido-fijo">
         <div class="nombre"></div>
-        <div class="vidas">
+        <div class="vidas" id="vidas">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
         </div>
-    
+        <div id="resultado"></div>
     </div>
     <script>
         const datos = JSON.parse(sessionStorage.getItem("datos"));
