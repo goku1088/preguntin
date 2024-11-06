@@ -209,3 +209,17 @@ if (questions.length > 0) {
     questionElement.innerHTML = questions[currentQuestionIndex];
     startTimer();
 }
+
+/*conexion php */
+fetch('conexion.php')
+    .then(response => response.json())
+    .then(data => {
+        let content = '';
+        data.forEach(item => {
+            content += `<p>${item.pregunta}: ${item.respuesta}</p>`;
+        });
+        document.getElementById('contenido').innerHTML = content;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
