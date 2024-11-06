@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntin</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/quiz.png">
     <!-- Fuente de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +20,12 @@
             <h1 class="mb-4">¡Bienvenido a Preguntin!</h1>
             <p class="lead mb-4">¿Cuánto sabes sobre cultura general? ¡Demuestra tus conocimientos!</p>
             <div class="mb-4">
-                <label for="nombre" class="form-label">Ingresa tu nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre">
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa tu nombre">
             </div>
-            <button onclick="comenzarJuego()" class="btn btn-primary">¡Comenzar!</button>
+            <button type="button" onclick="comenzarJuego()" class="btn btn-primary">¡Comenzar!</button>
         </div>
     </div>
+    <div></div>
     <script>
         function comenzarJuego(){
             const inputNombre = document.querySelector("#nombre").value.trim();

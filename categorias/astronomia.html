@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuestionario de Astronomía</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/quiz.png">
     <!-- Fuente de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,23 +15,23 @@
 </head>
 
 <body>
-    
+
     <div class="background-image">
         <div class="container text-center">
+            <div class="filtro"></div>
             <h1>Cuestionario de Astronomía</h1>
-            <div id="quizForm">
-                <div class="question">
-                    <p class="contenedor-pregunta">¿Cuál es el planeta más grande del sistema solar?</p>
-                    <div class="contenedor-opciones">
-                        <div class="contenedor-pregunta">Júpiter</div>
-                        <div class="contenedor-pregunta"> Tierra</div>
-                        <div class="contenedor-pregunta">Saturno</div>
-                        <div class="contenedor-pregunta">Marte</div>
-                        <div class="indicador-pregunta"><span>1</span></div>
-                    </div>
+            <div class="question">
+                <p class="contenedor-pregunta">¿Cuál es el planeta más grande del sistema solar?</p>
+                <div class="contenedor-opciones">
+                    <div class="contenedor-pregunta">Júpiter</div>
+                    <div class="contenedor-pregunta"> Tierra</div>
+                    <div class="contenedor-pregunta">Saturno</div>
+                    <div class="contenedor-pregunta">Marte</div>
+                    <div class="indicador-pregunta"><span>1</span></div>
                 </div>
-
-                <!-- <div class="question">
+            </div>
+        
+            <!-- <div class="question">
                     <p class="contenedor-pregunta">¿Qué fenómeno se produce cuando la Luna pasa entre la Tierra y el
                         Sol?</p>
                     <div class="contenedor-pregunta">Eclipse solar</div>
@@ -120,26 +121,25 @@
                     <div class="contenedor-pregunta"> Urano</div>
                     <div class="contenedor-pregunta"> Júpiter</div>
                 </div> -->
+            </ </div>
+        </div>
+        <div class="contenido-fijo">
+            <div class="nombre"></div>
+            <div class="vidas">
+                <img src="../img/heart-solid.svg" alt="icono de un corazón">
+                <img src="../img/heart-solid.svg" alt="icono de un corazón">
+                <img src="../img/heart-solid.svg" alt="icono de un corazón">
+                <img src="../img/heart-solid.svg" alt="icono de un corazón">
+                <img src="../img/heart-solid.svg" alt="icono de un corazón">
             </div>
+
         </div>
-    </div>
-    <div class="contenido-fijo">
-        <div class="nombre"></div>
-        <div class="vidas">
-            <img src="../img/heart-solid.svg" alt="icono de un corazón">
-            <img src="../img/heart-solid.svg" alt="icono de un corazón">
-            <img src="../img/heart-solid.svg" alt="icono de un corazón">
-            <img src="../img/heart-solid.svg" alt="icono de un corazón">
-            <img src="../img/heart-solid.svg" alt="icono de un corazón">
-        </div>
-        
-    </div>
-    <script>
-        const datos = JSON.parse(sessionStorage.getItem("datos"));
-        const nombre = document.querySelector(".nombre");
-        nombre.textContent = datos.nombre;
-    </script>
-    <script src="../js/script.js"></script>
+        <script>
+            const datos = JSON.parse(sessionStorage.getItem("datos"));
+            const nombre = document.querySelector(".nombre");
+            nombre.textContent = datos.nombre;
+        </script>
+        <script src="../js/script.js"></script>
 </body>
 
 </html>
