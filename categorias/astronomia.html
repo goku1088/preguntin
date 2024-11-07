@@ -17,8 +17,7 @@
 <body>
 
     <div class="background-image">
-        <div class="container text-center">
-            <div class="filtro"></div>
+        <div id="datos" class="container text-center">
             <h1>Cuestionario de Astronomía</h1>
             <div class="question">
                 <p class="contenedor-pregunta">¿Cuál es el planeta más grande del sistema solar?</p>
@@ -132,8 +131,10 @@
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
         </div>
-
+        <div id="resultado"></div>
+        <button class="btn" type="button">Volver a jugar</button>
     </div>
+    <div class="timer" id="timer">20</div>
     <script>
         const datos = JSON.parse(sessionStorage.getItem("datos"));
         const nombre = document.querySelector(".nombre");

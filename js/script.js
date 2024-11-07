@@ -210,15 +210,34 @@ if (questions.length > 0) {
     startTimer();
 }
 
-/*conexion php */
-fetch('conexion.php')
+
+fetch('../controladores/read_preguntas.php')
     .then(response => response.json())
     .then(data => {
-        let content = '';
-        data.forEach(item => {
-            content += `<p>${item.pregunta}: ${item.respuesta}</p>`;
+        console.log(data)
+        let informacion = `
+            <h1>Cuestionario de Informática y Ciencia de Datos</h1>
+        `;
+        data.forEach((elemento, indice) => {
+            const textoPregunta = elemento.pregunta;
+            const respuestas = elemento.respuestas.split(", ");
+            const cualEsCorrecta = elemento.cual_es_correcta.split(", ");
+            informacion += `
+                <div class="question">
+                    <p class="contenedor-pregunta">¿${textoPregunta}?</p>
+                    <div class="contenedor-opciones">
+                        <div class="contenedor-pregunta">${respuestas[0]}</div>
+                        <div class="contenedor-pregunta">${respuestas[1]}</div>
+                        <div class="contenedor-pregunta">${respuestas[2]}</div>
+                        <div class="contenedor-pregunta">${respuestas[3]}</div>
+                        <div class="indicador-pregunta"><span>${indice + 1}</span></div>
+                    </div>
+                </div>
+            
+            `
         });
-        document.getElementById('contenido').innerHTML = content;
+        console.log(informacion)
+        document.getElementById('datos').innerHTML = informacion;
     })
     .catch(error => {
         console.error('Error:', error);

@@ -1,7 +1,7 @@
 <?php
-$host = 'localhost';
-$usuario = 'Root'; // Cambia esto
-$contraseña = ''; // Cambia esto
+$host = '127.0.0.1';
+$usuario = 'root';
+$contraseña = '';
 $base_datos = 'preguntin';
 
 // Crear conexión
@@ -12,19 +12,4 @@ if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
 
-// Consulta para obtener preguntas y respuestas
-$sql = "SELECT p.id, p.pregunta, r.respuesta 
-        FROM preguntas p 
-        LEFT JOIN respuestas r ON p.id = r.id_pregunta";
-$resultado = $conexion->query($sql);
-
-$datos = array();
-if ($resultado->num_rows > 0) {
-    while($fila = $resultado->fetch_assoc()) {
-        $datos[] = $fila;
-    }
-}
-
-echo json_encode($datos);
-$conexion->close();
 ?>
