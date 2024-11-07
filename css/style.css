@@ -279,3 +279,42 @@ h1 {
     margin-top: 20px;
     font-weight: bold;
 }
+/* tiempo y restar vidas */
+.timer {
+    font-size: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.lives {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.question {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.feedback {
+    font-size: 20px;
+    text-align: center;
+    color: red;
+    margin-top: 15px;
+}
+
+.next-question {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}

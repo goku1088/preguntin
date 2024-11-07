@@ -1,15 +1,30 @@
-<?php 
+<?php
+$host = 'localhost';
+$usuario = 'Root'; // Cambia esto
+$contraseña = ''; // Cambia esto
+$base_datos = 'preguntin';
 
-$user= "root";
-$password= "";
-$data_name= "preguntin";
+// Crear conexión
+$conexion = new mysqli($host, $usuario, $contraseña, $base_datos);
 
-$conn= new mysqli($user, $password, $data_name);
-
-if($conn->connect_error){
-    die("hubo un error");
-} else {
-    die("se conecto a mysql");
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 
+// Consulta para obtener preguntas y respuestas
+$sql = "SELECT p.id, p.pregunta, r.respuesta 
+        FROM preguntas p 
+        LEFT JOIN respuestas r ON p.id = r.id_pregunta";
+$resultado = $conexion->query($sql);
+
+$datos = array();
+if ($resultado->num_rows > 0) {
+    while($fila = $resultado->fetch_assoc()) {
+        $datos[] = $fila;
+    }
+}
+
+echo json_encode($datos);
+$conexion->close();
 ?>
