@@ -6,14 +6,15 @@ include ("conexion.php");
 /*$sql = "SELECT p.id, p.pregunta, r.opcion
         FROM preguntas p 
         LEFT JOIN respuestas r ON p.id = r.id_pregunta";*/
-
+$dato = json_decode(file_get_contents('php://input'), true);
+$id_categoria = $dato["id"];
 $sql = "SELECT 
-            p.pregunta, 
+            p.pregunta,
             GROUP_CONCAT(r.opcion SEPARATOR ', ') AS respuestas,
             GROUP_CONCAT(r.es_correcta SEPARATOR ', ') AS cual_es_correcta
         FROM preguntas p
         LEFT JOIN respuestas r ON p.id = r.id_pregunta
-        WHERE p.id_categoria = 1
+        WHERE p.id_categoria = $id_categoria
         GROUP BY p.pregunta";
 
 

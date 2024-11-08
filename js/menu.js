@@ -1,3 +1,5 @@
+
+
 function randomCategory() {
     const categories = [
         '../categorias/cienciadedatos.html',
@@ -8,34 +10,38 @@ function randomCategory() {
     const randomIndex = Math.floor(Math.random() * categories.length);
     const categoria = document.querySelectorAll(".categorias")[randomIndex];
     categoria.classList.add("seleccionada");
+
+    const idCategoria = categoria.dataset.idCategoria;
+    sessionStorage.setItem("infoCategoria", JSON.stringify({ nombre: categoria.textContent, id: idCategoria}));
     setTimeout(() => window.location.href = categories[randomIndex], 1000);
 }
 
-fetch("../controladores/read_categorias.php")
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        mostrarCategorias(data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-
+function obtenerCategorias() {
+    fetch("../controladores/read_categorias.php")
+        .then(respuesta => respuesta.json())
+        .then(data => {
+            mostrarCategorias(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
 
 const mostrarCategorias = (datos) => {
 
     const divDatos = document.querySelector("#datos");
 
     if (datos) {
-    
+
         let nombreArchivo = "";
         let datosAMostrar = `
-            <h1 class="mb-4">¡Selecciona tu Categoría!</h1>
+            <h1 class="mb-4">¡Selecciona una Categoría!</h1>
             <p><strong>Elige un tema que te apasione y sumérgete en el conocimiento.</strong></p>
             <div class="row">
         `;
 
         datos.forEach(categoria => {
-            
+
             if (categoria.nombre.toLowerCase() == "astronomía") {
                 nombreArchivo = "astronomia";
             } else {
@@ -43,7 +49,7 @@ const mostrarCategorias = (datos) => {
             }
             datosAMostrar += `
                 <div class="col-md-6">
-                    <a href="/categorias/${nombreArchivo}.html" class="categorias">
+                    <a href="/categorias/${nombreArchivo}.html" class="categorias" data-id-categoria="${categoria.id}">
                         <h3>${categoria.nombre}</h3>
                     </a>
                 </div>
@@ -63,3 +69,5 @@ const mostrarCategorias = (datos) => {
 
     }
 };
+
+window.addEventListener("load", obtenerCategorias());

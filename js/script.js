@@ -23,7 +23,9 @@ function mostrarPregunta(numero) {
     preguntas.forEach((pregunta) => {
         pregunta.style.display = 'none';
     });
-    document.getElementById('pregunta' + numero).style.display = 'block';
+
+    preguntas[numero].style.display = 'block';
+    //document.getElementById('pregunta' + numero).style.display = 'block';
 }
 
 function siguientePregunta() {
@@ -49,9 +51,9 @@ function actualizarVidas() {
     }
 }
 
-function verificarRespuesta(correcta, opcion) {
+function verificarRespuesta(bandera) {
     if (intentosRestantes > 0) {
-        if (opcion === correcta) {
+        if (bandera == 1) {
             respuestasCorrectas++;
             return true;
         } else {
@@ -62,14 +64,14 @@ function verificarRespuesta(correcta, opcion) {
                 mostrarResultadoFinal();
                 return false;
             }
-            alert(`Respuesta incorrecta. Intentos restantes: ${intentosRestantes}`);
+            //alert(`Respuesta incorrecta. Intentos restantes: ${intentosRestantes}`);
             return false;
         }
     }
 }
 
-function respuesta1(opcion) {
-    if (verificarRespuesta('Abner Doubleday', opcion)) {
+function respuesta(bandera) {
+    if (verificarRespuesta(bandera)) {
         siguientePregunta();
     }
 }
@@ -144,8 +146,8 @@ function mostrarResultadoFinal() {
     };
 }
 
-mostrarPregunta(ordenPreguntas[posicionActual]);
-actualizarVidas();
+//mostrarPregunta(ordenPreguntas[posicionActual]);
+//actualizarVidas();
 
 
 
@@ -211,34 +213,45 @@ if (questions.length > 0) {
 }
 
 
-fetch('../controladores/read_preguntas.php')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        let informacion = `
-            <h1>Cuestionario de Informática y Ciencia de Datos</h1>
-        `;
-        data.forEach((elemento, indice) => {
-            const textoPregunta = elemento.pregunta;
-            const respuestas = elemento.respuestas.split(", ");
-            const cualEsCorrecta = elemento.cual_es_correcta.split(", ");
-            informacion += `
-                <div class="question">
-                    <p class="contenedor-pregunta">¿${textoPregunta}?</p>
-                    <div class="contenedor-opciones">
-                        <div class="contenedor-pregunta">${respuestas[0]}</div>
-                        <div class="contenedor-pregunta">${respuestas[1]}</div>
-                        <div class="contenedor-pregunta">${respuestas[2]}</div>
-                        <div class="contenedor-pregunta">${respuestas[3]}</div>
-                        <div class="indicador-pregunta"><span>${indice + 1}</span></div>
+function obtenerPreguntas() {
+    const infoCategoria = JSON.parse(sessionStorage.getItem("infoCategoria"));
+    const opciones = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: infoCategoria.id })
+    }
+    fetch('../controladores/read_preguntas.php', opciones)
+        .then(response => response.json())
+        .then(data => {
+            let informacion = `
+                <h1>Cuestionario de ${infoCategoria.nombre}</h1>
+            `;
+            data.forEach((elemento, indice) => {
+                const textoPregunta = elemento.pregunta;
+                const respuestas = elemento.respuestas.split(", ");
+                const cualEsCorrecta = elemento.cual_es_correcta.split(", ");
+                informacion += `
+                    <div class="question">
+                        <p class="contenedor-pregunta">${textoPregunta}</p>
+                        <div class="contenedor-opciones">
+                            <div onclick="respuesta(${cualEsCorrecta[0]})" class="contenedor-pregunta">${respuestas[0]}</div>
+                            <div onclick="respuesta(${cualEsCorrecta[1]})" class="contenedor-pregunta">${respuestas[1]}</div>
+                            <div onclick="respuesta(${cualEsCorrecta[2]})" class="contenedor-pregunta">${respuestas[2]}</div>
+                            <div onclick="respuesta(${cualEsCorrecta[3]})" class="contenedor-pregunta">${respuestas[3]}</div>
+                            <div class="indicador-pregunta"><span>${indice + 1}</span></div>
+                        </div>
                     </div>
-                </div>
-            
-            `
+                `;
+            });
+            document.getElementById('datos').innerHTML = informacion;
+            mostrarPregunta(ordenPreguntas[posicionActual]);
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
-        console.log(informacion)
-        document.getElementById('datos').innerHTML = informacion;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+}
+
+
+window.addEventListener("load", obtenerPreguntas());

@@ -17,7 +17,7 @@
 <body>
     <div class="background-image">
         <div id="datos" class="container text-center">
-            <!-- <h1>Cuestionario de Informática y Ciencia de Datos</h1>
+            <!-- <h1>Cuestionario de Ciencia de Datos</h1>
             <div class="question">
                 <p class="contenedor-pregunta">¿Qué es un algoritmo?</p>
                 <div class="contenedor-opciones">
@@ -149,7 +149,7 @@
     </div>
     <div class="contenido-fijo">
         <div class="nombre"></div>
-        <div class="vidas">
+        <div class="vidas" id="vidas">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
             <img src="../img/heart-solid.svg" alt="icono de un corazón">
@@ -162,8 +162,7 @@
     <div class="timer" id="timer">20</div>
     <script>
         const datos = JSON.parse(sessionStorage.getItem("datos"));
-        const nombre = document.querySelector(".nombre");
-        nombre.textContent = datos.nombre;
+        const nombre = document.querySelector(".nombre").textContent = datos.nombre;
     </script>
     <script src="../js/script.js"></script>
 </body>

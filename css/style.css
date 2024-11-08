@@ -38,6 +38,11 @@ p {
     box-shadow: 8px 8px #413fd1;
 }
 
+.lead {
+    color: #283848;
+    font-weight:500;
+}
+
 @keyframes show {
     from {
         /* translate: 0 20px; */
@@ -100,7 +105,7 @@ p {
     display: grid;
     grid-template-columns: 45% 45%;
     justify-content: space-between;
-    align-items: baseline;
+    /* align-items: baseline; */
     gap: 1.5rem;
     margin: 30px -15px 0;
 }
@@ -111,9 +116,23 @@ p {
     background-color: #0051cc;
     /* background-color: #8fa9ca; */
     cursor: pointer;
-    padding: 12px 10px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
     transition: background-color 0.5s;
     /* transition-property: background; */
+}
+
+.scroll-x {
+    white-space: nowrap;
+    overflow-x: auto;
+    /* scrollbar-color: #5372F0 #d8e8f0;    */
+}
+
+.scroll-x::-webkit-scrollbar {
+    width: 14px;
+    background-color: #413fd1;
 }
 
 .cambiar-color {
