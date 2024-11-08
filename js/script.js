@@ -242,3 +242,21 @@ fetch('../controladores/read_preguntas.php')
     .catch(error => {
         console.error('Error:', error);
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const answers = document.querySelectorAll('.contenedor-pregunta');
+    
+        answers.forEach(answer => {
+            answer.addEventListener('click', (e) => {
+                answers.forEach(a => a.classList.remove('seleccionada'));
+                e.target.classList.add('seleccionada');
+    
+                if (e.target.getAttribute('data-answer') === 'correct') {
+                    alert('¡Respuesta correcta!');
+                } else {
+                    alert('Respuesta incorrecta, intenta de nuevo.');
+                }
+            });
+        });
+    });
+    
